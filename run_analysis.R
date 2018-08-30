@@ -1,14 +1,14 @@
 ##Getting and Cleaning Data Peer Graded Assignment
 library(dplyr)
 
-# Load activity labels and features
+# Load the activity labels and features datasets.
 
 features <- read.table("features.txt", col.names = c("num","features"))
 activity_labels <- read.table("activity_labels.txt" , col.names = c("label","activity"))
 
 # Merge the training and the test sets to create one set.
 
-# Read test dataset
+# Read test dataset and join to activity labels dataset.
 
 subject_test <- read.table("test/subject_test.txt", col.names = "Subject")
 x_test <- read.table("test/x_test.txt", col.names = features$features)
@@ -18,7 +18,7 @@ y_test_label <- left_join(y_test, activity_labels, by = "label")
 tidy_test <- cbind(subject_test, y_test_label, x_test)
 tidy_test <- select(tidy_test, -label)
 
-# Read train dataset
+# Read train dataset and join to activity labels dataset.
 
 subject_train <- read.table("train/subject_train.txt", col.names = "Subject")
 x_train <- read.table("train/x_train.txt", col.names = features$features)
@@ -28,7 +28,7 @@ y_train_label <- left_join(y_train, activity_labels, by = "label")
 tidy_train <- cbind(subject_train, y_train_label, x_train)
 tidy_train <- select(tidy_train, -label)
 
-#combine test and train data sets
+# Merge test and train data sets
 
 tidy_set <- rbind(tidy_test, tidy_train)
 

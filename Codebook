@@ -6,12 +6,13 @@ The dataset includes the following files and variables:
 
 1.  features.txt:  List of all features.
 2.  activity_labels.txt:  Links the class labels with their activity name.
-3.  x_test.txt:  Test set
-4.  y_test:  Test lables
-5.  x_train.txt Training set
-6.  y_train.txt Training labels
-7.  subject_test.txt:  Indentifies the subject who performed the activity for each sample. 
-8.  subject_train.txt: Indentifies the subject who performed the activity for each sample. 
+3.  x_test:  Test set
+4.  y_test_label:  Test lables
+5.  x_train Training set
+6.  y_train_labels Training labels
+7.  tidy_train: Combined train and label datasets including indentifing the subject who performed the activity for each sample. 
+8.  tidy_mean_std: Tidy dataset with mean and standard deviation.
+9.  tidy_file:  Contains final tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair.
 
 # Transformation Details
 
